@@ -1,4 +1,4 @@
-var uluru = {lat: -25.363, lng: 131.044};
+var currentPosition = {lat: -25.363, lng: 131.044};
 
 function geoError(error) {
     console.log(error.message);
@@ -7,7 +7,7 @@ function geoError(error) {
 window.onload = function() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(pos){
-            uluru = {lat: pos.coords.longitude, lng: pos.coords.latitude}
+            currentPosition = {lat: pos.coords.longitude, lng: pos.coords.latitude}
         }, geoError);
     } else {
         alert('Geolocation is not supported');
@@ -33,10 +33,10 @@ function getVenues(latLng){
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 4,
-        center: uluru
+        center: currentPosition
     });
     var marker = new google.maps.Marker({
-        position: uluru,
+        position: currentPosition,
         map: map
     });
 
