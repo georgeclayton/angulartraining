@@ -37,68 +37,56 @@
       </div>
     </nav>
 
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-          <div id="map"></div>
-          <script>
-              function initMap() {
-                  var uluru = {lat: -25.363, lng: 131.044};
-                  var map = new google.maps.Map(document.getElementById('map'), {
-                      zoom: 4,
-                      center: uluru
-                  });
-                  var marker = new google.maps.Marker({
-                      position: uluru,
-                      map: map
-                  });
-              }
-          </script>
-          <script async defer
-                  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCG6AI17xtG25uwTXad6dHUVui6SpZ6S48&callback=initMap">
-          </script>
-      </div>
-    </div>
+        <div class="container">
+          <div class="row">
+              <div class="col-md-6">
+                  <div id="map">
+                      <script>
+                          function initMap() {
+                              var uluru = {lat: -25.363, lng: 131.044};
+                              var map = new google.maps.Map(document.getElementById('map'), {
+                                  zoom: 4,
+                                  center: uluru
+                              });
+                              var marker = new google.maps.Marker({
+                                  position: uluru,
+                                  map: map
+                              });
+                          }
+                      </script>
+                      <script async defer
+                              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCG6AI17xtG25uwTXad6dHUVui6SpZ6S48&callback=initMap">
+                      </script>
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <h2>Location:</h2>
+                      <label for="location"></label>
+                      <input type="text" class="form-control" id="location">
+                  </div>
+                  <h2>Latitude and Longitude:</h2>
+                  <div class="form-group">
+                      <label for="latitude">Latitude</label>
+                      <input type="text" class="form-control" id="latitude">
+                  </div>
+                  <div class="form-group">
+                      <label for="longitude">Longitude</label>
+                      <input type="text" class="form-control" id="longitude">
+                  </div>
+                  <p><a class="btn btn-success" href="#" role="button">Search</a></p>
+              </div>
+          </div>
 
-    <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4 rounded-box">
-          <h2>Location</h2>
-            <div class="form-group">
-                <label for="location">Location:</label>
-                <input type="text" class="form-control" id="location">
-            </div>
-            <p><a class="btn btn-success" href="#" role="button">Search Location &raquo;</a></p>
-        </div>
-        <div class="col-md-4 rounded-box">
-          <h2>Place</h2>
-            <div class="form-group">
-                <label for="place">Place:</label>
-                <input type="text" class="form-control" id="place">
-            </div>
-            <p><a class="btn btn-success" href="#" role="button">Search Place &raquo;</a></p>
-       </div>
-        <div class="col-md-4 rounded-box">
-          <h2>Latitude and Longitude</h2>
-            <div class="form-group">
-                <label for="latitude">Latitude:</label>
-                <input type="text" class="form-control" id="latitude">
-            </div>
-            <div class="form-group">
-                <label for="longitude">Longitude:</label>
-                <input type="text" class="form-control" id="longitude">
-            </div>
-          <p><a class="btn btn-success" href="#" role="button">Search Latitude and Longitude &raquo;</a></p>
-        </div>
-      </div>
 
-      <hr>
+          <footer>
 
-      <footer>
-        <p>&copy; Company 2015</p>
-      </footer>
-    </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+          </footer>
+
+    </div> <!-- /container -->
+
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
         <script src="js/vendor/bootstrap.min.js"></script>
