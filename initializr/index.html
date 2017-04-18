@@ -40,24 +40,7 @@
         <div class="container">
           <div class="row">
               <div class="col-md-6">
-                  <div id="map">
-                      <script>
-                          function initMap() {
-                              var uluru = {lat: -25.363, lng: 131.044};
-                              var map = new google.maps.Map(document.getElementById('map'), {
-                                  zoom: 4,
-                                  center: uluru
-                              });
-                              var marker = new google.maps.Marker({
-                                  position: uluru,
-                                  map: map
-                              });
-                          }
-                      </script>
-                      <script async defer
-                              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCG6AI17xtG25uwTXad6dHUVui6SpZ6S48&callback=initMap">
-                      </script>
-                  </div>
+                  <div id="map"></div>
               </div>
               <div class="col-md-6">
                   <div class="form-group">
@@ -78,7 +61,6 @@
               </div>
           </div>
 
-
           <footer>
 
           </footer>
@@ -91,7 +73,11 @@
 
         <script src="js/vendor/bootstrap.min.js"></script>
 
+        <script src="js/keys.js"></script>
         <script src="js/main.js"></script>
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCG6AI17xtG25uwTXad6dHUVui6SpZ6S48&callback=initMap">
+        </script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
