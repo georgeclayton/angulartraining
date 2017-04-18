@@ -1,14 +1,16 @@
-var currentPosition = {lat: -25.363, lng: 131.044};
+var chasesidePosition = {lat: 50.7442907, lng: -1.8258587};
+var currentPosition = chasesidePosition;
 
-function geoError(error) {
+function blocked(error) {
     console.log(error.message);
+    initMap(currentPosition.lat, currentPosition.lng)
 }
 
 window.onload = function () {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (pos) {
             initMap(pos.coords.latitude, pos.coords.longitude)
-        }, geoError);
+        }, blocked);
     } else {
         alert('Geolocation is not supported');
     }
