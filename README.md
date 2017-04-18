@@ -8,3 +8,6 @@ ideas:
 	- venues for locations
 - weather
 	- weather for location
+- news
+	- newsapi
+- location demographics	
