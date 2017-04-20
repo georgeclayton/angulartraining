@@ -92,11 +92,11 @@ app/                    --> all of the source files for the application
   view1/                --> the view1 view template and logic
     view1.html            --> the partial template
     map-controller.js              --> the controller logic
-    map-factory.js         --> tests of the controller
+    map-service.js         --> tests of the controller
   view2/                --> the view2 view template and logic
     view2.html            --> the partial template
-    foursqaure-controller.js              --> the controller logic
-    foursqaure-factory.js         --> tests of the controller
+    foursquare-controller.js              --> the controller logic
+    foursquare-service.js         --> tests of the controller
   app.js                --> main application module
   index.html            --> app layout file (the main html template file of the app)
   index-async.html      --> just like index.html, but loads js files asynchronously
@@ -118,7 +118,7 @@ which we run with the [Karma][karma] test runner. We provide a Karma configurati
 
 * The configuration is found at `karma.conf.js`.
 * The unit tests are found next to the code they are testing and have an `_test.js` suffix (e.g.
-  `map-factory.js`).
+  `map-service.js`).
 
 The easiest way to run the unit tests is to use the supplied npm script:
 

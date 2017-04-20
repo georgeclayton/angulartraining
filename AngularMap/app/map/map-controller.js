@@ -1,14 +1,11 @@
 'use strict';
 
-angular.module('myApp.view1', ['ngRoute'])
+var injectParams = ['$scope'];
 
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/map', {
-    templateUrl: 'map/map.html',
-    controller: 'View1Ctrl'
-  });
-}])
+var MapController = function($scope) {
 
-.controller('View1Ctrl', function($scope) {
+};
 
-});
+MapController.$inject = injectParams;
+
+angular.module('myApp.map').controller('MapController', MapController);

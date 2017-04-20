@@ -1,3 +1,8 @@
-/**
- * Created by Student on 4/20/2017.
- */
+angular.module('myApp.map', [])
+// .config(['$routeProvider', function($routeProvider) {
+//   $routeProvider.when('/map', {
+//     templateUrl: 'map/map.html',
+//     controller: 'View1Ctrl'
+//   });
+// }])
+;
