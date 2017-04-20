@@ -17,5 +17,5 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
           templateUrl: 'foursquare/foursquare-view.html',
           controller: 'foursquareController'
       })
-      // .otherwise({redirectTo: '/foursquare'});
+      .otherwise({redirectTo: '/'});
 }]);

@@ -1,21 +1,12 @@
 'use strict';
 
-var injectParams = ['$scope', 'mapFactory'];
+var injectParams = ['$scope', 'mapService'];
 
-var mapController = function ($interval, mapFactory) {
+var mapController = function ($interval, mapService) {
     var that = this;
-    mapFactory.getCurrentPos().then(function (loc) {
-        //warning....
-        console.log('In async callback');
-        console.log(that);
 
-        that.currentLocation = {
-            lat: loc.coords.latitude,
-            lng: loc.coords.longitude
-        };
-    }, function (err) {
-        console.log(err);
-    })
+    mapService.loadPos().then(that.currentLocation = mapService.getPos());
+    that.currentLocation = mapService.getPos();
 };
 
 mapController.$inject = injectParams;
