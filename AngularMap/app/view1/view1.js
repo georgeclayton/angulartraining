@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.view1', ['ngRoute', 'ngMap'])
+angular.module('myApp.view1', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/view1', {
@@ -9,10 +9,6 @@ angular.module('myApp.view1', ['ngRoute', 'ngMap'])
   });
 }])
 
-.controller('View1Ctrl', [$scope, function($scope) {
-    NgMap.getMap().then(function(map) {
-        console.log(map.getCenter());
-        console.log('markers', map.markers);
-        console.log('shapes', map.shapes);
-    });
-}]);
+.controller('View1Ctrl', function($scope) {
+
+});
