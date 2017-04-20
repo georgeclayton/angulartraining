@@ -1,6 +1,15 @@
-<p>This is the partial for view 2.</p>
-<div>
-  GEORGOEOORGOEROGEROG
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
+foursquare view
+<div ng-controller="foursquareController">
+
+
+
+
+  <div ng-show="errorMessage"> Error: {{errorMessage}}</div>
+  <div>
+    <!--{{data}}-->
+
+    <li ng-repeat="venues in data.response.venues track by $index">
+      venues:{{ venues }}
+    </li>
+  </div>
 </div>

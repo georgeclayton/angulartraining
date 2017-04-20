@@ -9,6 +9,8 @@
   <title>My AngularJS App</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="css/app.css">
@@ -21,7 +23,7 @@
 <body>
 
 <!--will change to directive later-->
-  <div ng-include="map/map-view.html"></div>
+  <div class="jumpboton" ng-include="map/map-view.html"></div>
 
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -57,7 +59,10 @@
 
   <div ng-view></div>
 
-  <div>Angular seed app: v<span app-version></span></div>
+  <footer>
+    <div>Angular seed app: v<span app-version></span></div>
+  </footer>
+
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
@@ -65,6 +70,7 @@
 
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
 
   <!--<script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>-->
   <!--<script src="/bower_components/ngmap/build/scripts/ng-map.min.js"></script>-->
