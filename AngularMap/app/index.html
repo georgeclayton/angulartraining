@@ -11,13 +11,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="css/app.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+  <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
 
 <!--will change to directive later-->
   <div ng-include="map/map-view.html"></div>
+
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">George's Angular App!</a>
+        <ul class="nav navbar-nav">
+          <li><a href="#!/foursquare">Foursquare</a></li>
+          <li><a href="#">Weather</a></li>
+          <li><a href="#">News</a></li>
+        </ul>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+      </div><!--/.navbar-collapse -->
+    </div>
+  </nav>
 
 
   <ul class="menu">
@@ -52,7 +77,7 @@
   <script src="foursquare/foursquare-module.js"></script>
   <script src="foursquare/foursquare-service.js"></script>
   <script src="foursquare/foursquare-controller.js"></script>
-
+<script src=""></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
