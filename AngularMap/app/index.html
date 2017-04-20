@@ -1,32 +1,36 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-  <link rel="stylesheet" href="css/app.css">
-  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My AngularJS App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+    <link rel="stylesheet" href="css/app.css">
+    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
-  <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
-
 
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -45,76 +49,72 @@
 </nav>
 
 <!--will change to directive later-->
-<div class="container">
+<div class="container" ng-controller="mapController as mc">
     <div class="row mapArea">
-        <div class="col-md-6">
+        <div class="col-md-9">
             <div id="map"></div>
         </div>
-        <div class="col-md-6">
-            <div class="form-group">
-                <h2>Location:</h2>
-                <label for="location"></label>
-                <input type="text" class="form-control" id="location">
-            </div>
-            <h2>Latitude and Longitude:</h2>
+        <div class="col-md-3">
+            <h3>Latitude and Longitude:</h3>
             <div class="form-group">
                 <label for="latitude">Latitude</label>
-                <input type="text" class="form-control" id="latitude">
+                <input type="text" class="form-control" id="latitude" ng-model="mc.currentLocation.lat">
             </div>
             <div class="form-group">
                 <label for="longitude">Longitude</label>
-                <input type="text" class="form-control" id="longitude">
+                <input type="text" class="form-control" id="longitude" ng-model="mc.currentLocation.lng">
             </div>
         </div>
     </div>
 
 
-  <ul class="menu">
-    <li><a href="#!/foursquare">foursquare</a></li>
-    <!--<li><a href="#!/weather">weather</a></li>-->
-    <!--<li><a href="#!/news">news</a></li>-->
-  </ul>
+    <ul class="menu">
+        <li><a href="#!/foursquare">foursquare</a></li>
+        <!--<li><a href="#!/weather">weather</a></li>-->
+        <!--<li><a href="#!/news">news</a></li>-->
+    </ul>
 
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+    <!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+        your browser</a> to improve your experience.</p>
+    <![endif]-->
 
-  <div ng-view></div>
+    <div ng-view></div>
 
-  <footer>
-    <div>Angular seed app: v<span app-version></span></div>
-  </footer>
+    <footer>
+        <div>Angular seed app: v<span app-version></span></div>
+    </footer>
 
 </div>
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
 
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
 
-  <!--<script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>-->
-  <!--<script src="/bower_components/ngmap/build/scripts/ng-map.min.js"></script>-->
+<!--<script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>-->
+<!--<script src="/bower_components/ngmap/build/scripts/ng-map.min.js"></script>-->
 
-  <script src="app.js"></script>
+<script src="app.js"></script>
 
-  <script src="map/map-module.js"></script>
-  <script src="map/map-service.js"></script>
-  <script src="map/map-controller.js"></script>
-  <script src="foursquare/foursquare-module.js"></script>
-  <script src="foursquare/foursquare-service.js"></script>
-  <script src="foursquare/foursquare-controller.js"></script>
-  <script src="news/news-module.js"></script>
-  <script src="news/news-service.js"></script>
-  <script src="news/news-controller.js"></script>
-  <script src="weather/weather-module.js"></script>
-  <script src="weather/weather-service.js"></script>
-  <script src="weather/weather-controller.js"></script>
-  <script src=""></script>
-  <script src="components/version/version.js"></script>
-  <script src="components/version/version-directive.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
+<script src="map/map-module.js"></script>
+<script src="map/map-service.js"></script>
+<script src="map/map-controller.js"></script>
+<script src="foursquare/foursquare-module.js"></script>
+<script src="foursquare/foursquare-service.js"></script>
+<script src="foursquare/foursquare-controller.js"></script>
+<script src="news/news-module.js"></script>
+<script src="news/news-service.js"></script>
+<script src="news/news-controller.js"></script>
+<script src="weather/weather-module.js"></script>
+<script src="weather/weather-service.js"></script>
+<script src="weather/weather-controller.js"></script>
+<script src=""></script>
+<script src="components/version/version.js"></script>
+<script src="components/version/version-directive.js"></script>
+<script src="components/version/interpolate-filter.js"></script>
 
 </body>
 </html>
