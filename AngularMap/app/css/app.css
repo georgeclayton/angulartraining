@@ -23,3 +23,17 @@
   content: "|";
   padding-right: 0.3em;
 }
+
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+}
+
+.mapArea {
+  padding: 50px;
+}

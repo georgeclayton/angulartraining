@@ -22,29 +22,51 @@
 </head>
 <body>
 
-<!--will change to directive later-->
-  <div class="jumpboton" ng-include="map/map-view.html"></div>
 
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Location Dashboard!</a>
-        <ul class="nav navbar-nav">
-          <li><a href="#!/foursquare">Foursquare</a></li>
-          <li><a href="#">Weather</a></li>
-          <li><a href="#">News</a></li>
-        </ul>
-      </div>
-      <div id="navbar" class="navbar-collapse collapse">
-      </div><!--/.navbar-collapse -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Location Dashboard!</a>
+            <ul class="nav navbar-nav">
+                <li><a href="#!/foursquare">Foursquare</a></li>
+                <li><a href="#">Weather</a></li>
+                <li><a href="#">News</a></li>
+            </ul>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+        </div><!--/.navbar-collapse -->
     </div>
-  </nav>
+</nav>
+
+<!--will change to directive later-->
+<div class="container">
+    <div class="row mapArea">
+        <div class="col-md-6">
+            <div id="map"></div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <h2>Location:</h2>
+                <label for="location"></label>
+                <input type="text" class="form-control" id="location">
+            </div>
+            <h2>Latitude and Longitude:</h2>
+            <div class="form-group">
+                <label for="latitude">Latitude</label>
+                <input type="text" class="form-control" id="latitude">
+            </div>
+            <div class="form-group">
+                <label for="longitude">Longitude</label>
+                <input type="text" class="form-control" id="longitude">
+            </div>
+        </div>
+    </div>
 
 
   <ul class="menu">
@@ -63,7 +85,7 @@
     <div>Angular seed app: v<span app-version></span></div>
   </footer>
 
-
+</div>
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
@@ -83,9 +105,16 @@
   <script src="foursquare/foursquare-module.js"></script>
   <script src="foursquare/foursquare-service.js"></script>
   <script src="foursquare/foursquare-controller.js"></script>
-<script src=""></script>
+  <script src="news/news-module.js"></script>
+  <script src="news/news-service.js"></script>
+  <script src="news/news-controller.js"></script>
+  <script src="weather/weather-module.js"></script>
+  <script src="weather/weather-service.js"></script>
+  <script src="weather/weather-controller.js"></script>
+  <script src=""></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
+
 </body>
 </html>
