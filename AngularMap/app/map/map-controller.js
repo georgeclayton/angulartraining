@@ -5,9 +5,11 @@ var injectParams = ['$scope', 'mapService'];
 var mapController = function ($interval, mapService) {
     var that = this;
 
-    mapService.loadPosition();
+    mapService.loadPosition().then(function () {
+        that.currentLocation = mapService.getCurrentLocation();
+    });
 
-    that.currentLocation = mapService.getCurrentLocation();
+
 };
 
 mapController.$inject = injectParams;

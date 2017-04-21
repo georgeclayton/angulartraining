@@ -1,7 +1,7 @@
 'use strict';
-var injectParams = ['$scope', '$http', 'foursquareFactory', 'mapService'];
+var injectParams = ['$scope', '$http', 'mapService'];
 
-var foursquareController = function ($scope, $http, foursquareFactory, mapService) {
+var foursquareController = function ($scope, $http, mapService) {
     $scope.lat = mapService.getCurrentLocation().lat;
     $scope.lng = mapService.getCurrentLocation().lng;
 
