@@ -6,28 +6,36 @@ var mapService = function ($q) {
 
     var factory = {};
 
-    var curPos = { lat: 50, lng: 20 };
+    var currentLocation = { lat: 50, lng: 20 };
 
-    factory.getPos = function () {
-        return curPos;
+    factory.getCurrentLocation = function () {
+        return currentLocation;
     };
 
-    factory.loadPos = function () {
+    function getCurrentPosition () {
         // $q is angular's implementation of promise
         return $q(function (resolve, reject) {
             navigator.geolocation.getCurrentPosition(function (pos) {
-                curPos = {
-                    lat: pos.coords.latitude,
-                    lng: pos.coords.longitude
-                };
-                console.log(curPos);
                 resolve(pos);
             }, function (err) {
                 reject(err);
             });
         });
+    }
 
+    factory.loadPosition = function () {
+        getCurrentPosition().then(function (loc) {
+            //warning....
+            console.log('In async callback');
+            console.log(JSON.stringify(loc));
 
+            currentLocation = {
+                lat: loc.coords.latitude,
+                lng: loc.coords.longitude
+            };
+        }, function (err) {
+            console.log(err);
+        });
     };
 
     return factory;

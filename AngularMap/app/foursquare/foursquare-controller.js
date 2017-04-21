@@ -1,22 +1,21 @@
 'use strict';
-var injectParams = ['$scope', '$http', '$q', 'foursquareFactory'];
+var injectParams = ['$scope', '$http', 'foursquareFactory', 'mapService'];
 
-var foursquareController = function ($scope, $http, $q, foursquareFactory) {
+var foursquareController = function ($scope, $http, foursquareFactory, mapService) {
+    $scope.lat = mapService.getCurrentLocation().lat;
+    $scope.lng = mapService.getCurrentLocation().lng;
 
-    // function loadFoursquare(){
-    foursquareFactory.getData()
-        .then(foursquareFactory.putData)
-        .then(displayData)
-        .catch(displayError);
-    // }
+    var url = 'https://api.foursquare.com/v2/venues/search?v=20161016&ll='+$scope.lat+'%2C%20'+$scope.lng+'&query=coffee&intent=checkin&client_id=UFR43GPU2M23AB3BJNRMNZVWMS15PXHY3KGBSIUHZDXR3RQA&client_secret=QBGT44DY10K5U55VE5WEBW5O00E4QFTSEJWAJBU2JFIOW4SS';
 
-    // function getData(){
-    //     return $http.get(url);
-    // }
 
-    function displayData(data){
-        $scope.data = data;
-        console.log("assigning 4s data");
+    getData().then(displayData).catch(displayError());
+
+    function getData(){
+        return $http.get(url);
+    }
+
+    function displayData(response){
+        $scope.data = response.data;
     }
 
     function displayError(error){
