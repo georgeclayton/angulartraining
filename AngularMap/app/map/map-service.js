@@ -32,7 +32,7 @@ var mapService = function ($q) {
                 console.log('In async callback');
                 console.log(JSON.stringify(loc));
 
-                if (!loc.isEmpty()) {
+                if (!angular.equals(loc, {})) {
                     currentLocation = {
                         lat: loc.coords.latitude,
                         lng: loc.coords.longitude
