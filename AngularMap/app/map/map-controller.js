@@ -4,11 +4,14 @@ var injectParams = ['$scope', 'mapService'];
 
 var mapController = function ($interval, mapService) {
     var that = this;
+    that.currentLocation = {lat: 0, lng: 0};
 
-    mapService.loadPosition().then(function () {
-        that.currentLocation = mapService.getCurrentLocation();
+    mapService.getCurrentPosition().then(function (pos) {
+        mapService.syncLocation.lat = pos.coords.latitude;
+        mapService.syncLocation.lng = pos.coords.longitude;
+        that.currentLocation.lat = mapService.syncLocation.lat;
+        that.currentLocation.lng = mapService.syncLocation.lng;
     });
-
 
 };
 
